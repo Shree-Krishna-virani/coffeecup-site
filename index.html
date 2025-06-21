@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coffeecup Design Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #1a202c, #2d3748);
+      color: white;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 60px;
+      height: auto;
+      z-index: 50;
+    }
+    .card-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 1200px;
+      width: 95%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .sidebar {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      height: 100%;
+      width: 60px;
+    }
+    .sidebar-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .sidebar-item:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+    .header-section {
+      background-image: url('./assets/header.jpg'); /* Replace with your own image */
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      padding: 20px;
+      min-height: 200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .header-profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-profile img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+    .promo-card, .game-info-card, .download-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .project-main-card {
+      background-image: url('./assets/samurai-project.jpg'); /* Replace */
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      padding: 20px;
+      min-height: 350px;
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+    }
+    .project-main-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+      border-radius: 15px;
+    }
+    .project-main-card-content {
+      position: relative;
+      z-index: 10;
+    }
+    .action-button {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .action-button:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+    .download-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .download-icon-item {
+      text-align: center;
+    }
+    .trailer-card {
+      background-image: url('./assets/trailer.jpg'); /* Replace */
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      padding: 15px;
+      min-height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+    }
+    .trailer-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      border-radius: 15px;
+    }
+    .play-button {
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      position: relative;
+      z-index: 10;
+    }
+
+    @media (min-width: 768px) {
+      .main-content {
+        display: flex;
+        gap: 20px;
+      }
+      .main-left {
+        flex: 2;
+      }
+      .main-right {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo -->
+  <img src="./assets/logo.png" alt="Coffeecup Logo" class="logo">
+
+  <!-- Wrapper -->
+  <div class="flex justify-center items-center min-h-screen">
+    <div class="card-container">
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="sidebar-item">🏠</div>
+        <div class="sidebar-item">🎞️</div>
+        <div class="sidebar-item">🧾</div>
+        <div class="sidebar-item">📥</div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="flex-1 space-y-6">
+
+        <!-- Header & Promo -->
+        <div class="flex flex-col md:flex-row gap-5">
+          <div class="header-section flex-1">
+            <div>
+              <h1 class="text-3xl font-bold">Welcome to Coffeecup</h1>
+              <p class="text-sm text-gray-200">Your Anime Animation Studio</p>
+            </div>
+            <div class="header-profile">
+              <span class="text-sm">Hi, Eva</span>
+              <img src="./assets/avatar.jpg" alt="Profile Picture">
+            </div>
+          </div>
+          <div class="promo-card md:w-1/3">
+            <h2 class="text-xl font-semibold">30% OFF</h2>
+            <p class="text-sm text-gray-200">Use Coupon:</p>
+            <img src="./assets/coupon.jpg" alt="Coupon" class="w-24 mx-auto mt-2">
+          </div>
+        </div>
+
+        <!-- Main Project & Trailer -->
+        <div class="main-content">
+          <!-- Left -->
+          <div class="main-left space-y-5">
+            <div class="project-main-card">
+              <div class="project-main-card-content">
+                <p class="text-sm text-gray-300">Featured Project</p>
+                <h2 class="text-4xl font-bold">SAMURAI QUEST</h2>
+                <div class="action-button mt-4">
+                  <span>Start Adventure</span>
+                  <span>➡️</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="download-card">
+              <h3 class="text-lg font-bold">Download Project Files</h3>
+              <div class="download-icons">
+                <div class="download-icon-item">
+                  📦<br><span class="text-sm">6.4G</span>
+                </div>
+                <div class="download-icon-item">
+                  📦<br><span class="text-sm">4.6G</span>
+                </div>
+                <div class="download-icon-item">
+                  📦<br><span class="text-sm">9.8G</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right -->
+          <div class="main-right space-y-5">
+            <div class="game-info-card">
+              <h3 class="text-lg font-bold">Upcoming Game</h3>
+              <p class="text-sm text-gray-300">Shadows Unleashed</p>
+              <p class="text-xs text-gray-400">September 10, 2024</p>
+            </div>
+
+            <a href="./trailer.html" class="trailer-card">
+              <div class="play-button">▶</div>
+              <span class="absolute bottom-4 left-4 text-white font-semibold z-10">Watch Trailer</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
