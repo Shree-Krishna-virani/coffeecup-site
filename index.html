@@ -14,6 +14,13 @@
       overflow-x: hidden;
       background: none;
     }
+    .main-page-bg {
+      position: fixed;
+      inset: 0;
+      background: url('main-background.png') center/cover no-repeat;
+      z-index: -3;
+      opacity: 1;
+    }
     .kompa-main-bg {
       position: absolute;
       inset: 0;
@@ -109,6 +116,7 @@
   </style>
 </head>
 <body class="relative px-4 py-6">
+  <div class="main-page-bg"></div>
   <div class="kompa-main-bg"></div>
   <div class="bg-overlay"></div>
 
