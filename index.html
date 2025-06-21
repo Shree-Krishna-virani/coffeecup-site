@@ -9,11 +9,24 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #041614;
-      color: white;
       margin: 0;
       padding: 0;
       overflow-x: hidden;
+      background: linear-gradient(to bottom right, #041614, #0d1f1e);
+    }
+    .bg-overlay {
+      position: absolute;
+      inset: 0;
+      background: url('class-effect-bg.png') center/cover no-repeat;
+      z-index: -2;
+      opacity: 0.3;
+    }
+    .main-bg-layer {
+      position: absolute;
+      inset: 0;
+      background: url('samurai-background.jpg') center/cover no-repeat;
+      z-index: -1;
+      opacity: 0.4;
     }
     .rounded-xl-custom {
       border-radius: 30px;
@@ -47,7 +60,10 @@
     }
   </style>
 </head>
-<body class="px-2 sm:px-4 py-4">
+<body class="relative px-2 sm:px-4 py-4">
+  <div class="bg-overlay"></div>
+  <div class="main-bg-layer"></div>
+
   <div class="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[70px_1fr_320px] gap-3">
 
     <!-- Sidebar -->
