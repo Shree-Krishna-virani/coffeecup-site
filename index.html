@@ -12,16 +12,16 @@
       margin: 0;
       padding: 0;
       overflow-x: hidden;
-      background: linear-gradient(to bottom right, #041614, #0d1f1e);
+      background: none;
     }
-    .bg-overlay {
+    .kompa-main-bg {
       position: absolute;
       inset: 0;
       background: url('class-effect-bg.png') center/cover no-repeat;
       z-index: -2;
       opacity: 0.3;
     }
-    .main-bg-layer {
+    .bg-overlay {
       position: absolute;
       inset: 0;
       background: url('samurai-background.jpg') center/cover no-repeat;
@@ -92,14 +92,25 @@
       font-size: 20px;
       font-weight: bold;
     }
+    .kompa-section {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 28px;
+      padding: 12px 32px;
+      max-width: max-content;
+      margin: 0 auto 24px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+    }
   </style>
 </head>
 <body class="relative px-4 py-6">
+  <div class="kompa-main-bg"></div>
   <div class="bg-overlay"></div>
-  <div class="main-bg-layer"></div>
 
   <!-- Kompa Label Section -->
-  <div class="text-white text-center text-xl font-bold mb-6">コンパ</div>
+  <div class="kompa-section">コンパ</div>
 
   <div class="max-w-6xl mx-auto grid grid-cols-[50px_1fr_280px] gap-4">
 
