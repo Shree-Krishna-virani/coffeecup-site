@@ -26,7 +26,7 @@
       inset: 0;
       background: url('samurai-background.jpg') center/cover no-repeat;
       z-index: -1;
-      opacity: 0.4;
+      opacity: 0.45;
     }
     .rounded-xl-custom {
       border-radius: 30px;
@@ -36,27 +36,53 @@
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .sidebar {
+    .sidebar-container {
+      border-radius: 0 40px 40px 0;
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 30px;
-      padding: 10px 0;
+      padding: 24px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      width: 60px;
     }
     .sidebar-button {
-      width: 40px;
-      height: 40px;
-      background-color: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(5px);
+      width: 38px;
+      height: 38px;
+      background-color: rgba(255, 255, 255, 0.1);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 8px auto;
       transition: background 0.3s ease;
     }
     .sidebar-button:hover {
       background-color: rgba(255, 255, 255, 0.2);
+    }
+    .download-section {
+      background: white;
+      border-radius: 28px;
+      padding: 20px;
+      position: relative;
+      text-align: center;
+    }
+    .download-bubble {
+      content: "";
+      position: absolute;
+      bottom: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 58px;
+      height: 44px;
+      background: #9ef3e0;
+      border-radius: 30px 30px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 22px;
     }
   </style>
 </head>
@@ -64,49 +90,49 @@
   <div class="bg-overlay"></div>
   <div class="main-bg-layer"></div>
 
-  <div class="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[70px_1fr_320px] gap-3">
+  <div class="w-full max-w-6xl mx-auto grid grid-cols-[60px_1fr_300px] gap-2 md:gap-5">
 
     <!-- Sidebar -->
-    <div class="sidebar flex md:flex-col items-center justify-between">
-      <div class="text-white font-bold text-md md:-rotate-90 whitespace-nowrap mb-4">コンパ</div>
-      <div class="sidebar-button">
-        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-      </div>
-      <div class="sidebar-button">
-        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-      </div>
-      <div class="sidebar-button">
-        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg>
-      </div>
+    <div class="sidebar-container">
+      <div class="text-white font-bold text-sm -rotate-90 mb-4">コンパ</div>
+      <div class="sidebar-button">🏠</div>
+      <div class="sidebar-button">🔍</div>
+      <div class="sidebar-button">🎮</div>
+      <div class="sidebar-button">👤</div>
     </div>
 
     <!-- Main Project Section -->
-    <div class="flex flex-col justify-between gap-4">
-      <div class="relative h-[320px] sm:h-[420px] bg-cover bg-center rounded-xl-custom overflow-hidden shadow-lg" style="background-image: url('samurai-project.jpg');">
-        <div class="absolute top-4 left-4 sm:top-6 sm:left-6 z-10">
-          <h2 class="text-sm sm:text-base text-white/80">Project 01</h2>
-          <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-wide">SAMURAI QUEST</h1>
+    <div class="flex flex-col justify-between gap-6">
+      <!-- Project Card -->
+      <div class="relative bg-white/10 rounded-[35px] p-6 shadow-xl overflow-hidden" style="background-image: url('samurai-project.jpg'); background-size: cover; background-position: center;">
+        <div class="relative z-10">
+          <p class="text-sm text-white/70">Project 01</p>
+          <h2 class="text-4xl font-bold text-white tracking-widest">SAMURAI QUEST</h2>
+          <div class="mt-4 bg-white rounded-full inline-flex items-center px-5 py-2 text-sm font-semibold text-black shadow-lg cursor-pointer hover:bg-gray-200">
+            Start Adventure <span class="ml-2">↗</span>
+          </div>
         </div>
-        <div class="absolute bottom-4 left-4 z-10 bg-white/10 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2 cursor-pointer hover:bg-white/20">
-          <span class="text-white font-semibold text-sm">Start Adventure</span>
-          <span class="text-white text-sm">↗</span>
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-[35px]"></div>
       </div>
 
-      <div class="bg-white/10 backdrop-blur-md px-6 py-6 rounded-xl-custom grid grid-cols-3 gap-4 text-center text-white/90">
-        <div>
-          <div class="text-2xl mb-1">📦</div>
-          <div class="text-xs">6.44 GB</div>
+      <!-- Download Section -->
+      <div class="download-section">
+        <h3 class="text-xl font-semibold text-black mb-4">Download</h3>
+        <div class="grid grid-cols-3 gap-4">
+          <div>
+            <div class="text-black text-xl">❤️</div>
+            <p class="text-sm text-black">6,445</p>
+          </div>
+          <div>
+            <div class="text-black text-xl">⭐</div>
+            <p class="text-sm text-black">4,892</p>
+          </div>
+          <div>
+            <div class="text-black text-xl">🔖</div>
+            <p class="text-sm text-black">9,876</p>
+          </div>
         </div>
-        <div>
-          <div class="text-2xl mb-1">📦</div>
-          <div class="text-xs">4.80 GB</div>
-        </div>
-        <div>
-          <div class="text-2xl mb-1">📦</div>
-          <div class="text-xs">9.87 GB</div>
-        </div>
+        <div class="download-bubble">⬇</div>
       </div>
     </div>
 
@@ -124,7 +150,7 @@
         </div>
         <p class="text-xs text-gray-300 mb-1">Upcoming Game</p>
         <h4 class="text-white font-bold text-sm mb-1">Shadows Unleashed</h4>
-        <p class="text-xs text-gray-400">September 10, 2034</p>
+        <p class="text-xs text-gray-400">September 10, 2024</p>
         <div class="flex justify-around mt-4 text-sm">
           <span>💬</span>
           <span>📸</span>
