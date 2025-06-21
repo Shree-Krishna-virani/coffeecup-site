@@ -93,15 +93,18 @@
       font-weight: bold;
     }
     .kompa-section {
+      position: relative;
       background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
       border-radius: 28px;
-      padding: 12px 32px;
+      padding: 14px 36px;
       max-width: max-content;
-      margin: 0 auto 24px;
+      margin: 0 auto 28px;
       font-size: 1.25rem;
       font-weight: 700;
       color: white;
+      z-index: 10;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.1);
     }
   </style>
 </head>
@@ -109,7 +112,7 @@
   <div class="kompa-main-bg"></div>
   <div class="bg-overlay"></div>
 
-  <!-- Kompa Label Section -->
+  <!-- Kompa Label Section with effect -->
   <div class="kompa-section">コンパ</div>
 
   <div class="max-w-6xl mx-auto grid grid-cols-[50px_1fr_280px] gap-4">
