@@ -2,275 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coffeecup Design Studio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom right, #1a202c, #2d3748);
+      background-color: #041614;
       color: white;
       margin: 0;
       padding: 0;
       overflow-x: hidden;
     }
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 60px;
-      height: auto;
-      z-index: 50;
+    .rounded-xl-custom {
+      border-radius: 30px;
     }
-    .card-container {
-      background: rgba(255, 255, 255, 0.1);
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(10px);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      max-width: 1200px;
-      width: 95%;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    }
-    .sidebar {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(5px);
-      border-radius: 15px;
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      height: 100%;
-      width: 60px;
-    }
-    .sidebar-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .sidebar-item:hover {
-      background: rgba(255, 255, 255, 0.4);
-    }
-    .header-section {
-      background-image: url('background.jpg'); /* Replace with your own image */
-      background-size: cover;
-      background-position: center;
-      border-radius: 15px;
-      padding: 20px;
-      min-height: 200px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-    .header-profile {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .header-profile img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 2px solid white;
-    }
-    .promo-card, .game-info-card, .download-card {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(5px);
-      border-radius: 15px;
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .project-main-card {
-      background-image: url('samurai-project.jpg'); /* Replace */
-      background-size: cover;
-      background-position: center;
-      border-radius: 15px;
-      padding: 20px;
-      min-height: 350px;
-      position: relative;
-      display: flex;
-      justify-content: flex-end;
-      flex-direction: column;
-    }
-    .project-main-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
-      border-radius: 15px;
-    }
-    .project-main-card-content {
-      position: relative;
-      z-index: 10;
-    }
-    .action-button {
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(5px);
-      border-radius: 15px;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .action-button:hover {
-      background: rgba(255, 255, 255, 0.4);
-    }
-    .download-icons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    .download-icon-item {
-      text-align: center;
-    }
-    .trailer-card {
-      background-image: url('./assets/trailer.jpg'); /* Replace */
-      background-size: cover;
-      background-position: center;
-      border-radius: 15px;
-      padding: 15px;
-      min-height: 150px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      cursor: pointer;
-    }
-    .trailer-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.4);
-      border-radius: 15px;
-    }
-    .play-button {
-      width: 60px;
-      height: 60px;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(5px);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 30px;
-      position: relative;
-      z-index: 10;
-    }
-
-    @media (min-width: 768px) {
-      .main-content {
-        display: flex;
-        gap: 20px;
-      }
-      .main-left {
-        flex: 2;
-      }
-      .main-right {
-        flex: 1;
-      }
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
   </style>
 </head>
-<body>
-  <!-- Logo -->
- 
-  <!-- Wrapper -->
-  <div class="flex justify-center items-center min-h-screen">
-    <div class="card-container">
+<body class="flex justify-center items-center min-h-screen px-4">
+  <div class="w-full max-w-6xl p-4 bg-white/10 backdrop-blur-lg rounded-xl-custom grid grid-cols-1 md:grid-cols-4 gap-6">
 
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <div class="sidebar-item">🏠</div>
-        <div class="sidebar-item">🎞️</div>
-        <div class="sidebar-item">🧾</div>
-        <div class="sidebar-item">📥</div>
+    <!-- Sidebar -->
+    <div class="flex md:flex-col justify-around md:justify-start gap-4 py-6 md:col-span-1">
+      <div class="text-white font-bold text-lg ml-2">コンパ</div>
+      <button class="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center">
+        <span class="text-xl">🏠</span>
+      </button>
+      <button class="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center">
+        <span class="text-xl">🔍</span>
+      </button>
+      <button class="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center">
+        <span class="text-xl">⚙️</span>
+      </button>
+      <button class="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center">
+        <span class="text-xl">🎨</span>
+      </button>
+    </div>
+
+    <!-- Main Project Section -->
+    <div class="md:col-span-2 flex flex-col justify-between">
+      <div class="relative h-[400px] bg-cover bg-center rounded-xl-custom overflow-hidden" style="background-image: url('samurai-project.jpg');">
+        <div class="absolute top-8 left-8 z-10">
+          <h2 class="text-xl text-white">Project 01</h2>
+          <h1 class="text-4xl font-bold text-white tracking-wide">SAMURAI QUEST</h1>
+        </div>
+        <div class="absolute bottom-6 left-6 z-10 bg-white/20 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2 cursor-pointer hover:bg-white/30">
+          <span class="text-white font-semibold">Start Adventure</span>
+          <span class="text-white">↗</span>
+        </div>
       </div>
-
-      <!-- Main Content -->
-      <div class="flex-1 space-y-6">
-
-        <!-- Header & Promo -->
-        <div class="flex flex-col md:flex-row gap-5">
-          <div class="header-section flex-1">
-            <div>
-              <h1 class="text-3xl font-bold">Welcome to Coffeecup</h1>
-              <p class="text-sm text-gray-200">Your Anime Animation Studio</p>
-            </div>
-            <div class="header-profile">
-              <span class="text-sm">Hi, Coffee</span>
-              <img src="logo.png" alt="Profile Picture">
-            </div>
+      <div class="bg-white/10 backdrop-blur-md mt-6 p-4 rounded-xl-custom">
+        <h3 class="text-center text-white text-lg font-semibold">Download</h3>
+        <div class="flex justify-around text-center mt-4">
+          <div>
+            <div class="text-2xl">📥</div>
+            <div class="text-sm">6.44g</div>
           </div>
-          <div class="promo-card md:w-1/3">
-            <h2 class="text-xl font-semibold">30% OFF</h2>
-            <p class="text-sm text-gray-200">Use Coupon:</p>
-            <img src="./assets/coupon.jpg" alt="Coupon" class="w-24 mx-auto mt-2">
+          <div>
+            <div class="text-2xl">📥</div>
+            <div class="text-sm">4.8g</div>
+          </div>
+          <div>
+            <div class="text-2xl">📥</div>
+            <div class="text-sm">9.87g</div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <!-- Main Project & Trailer -->
-        <div class="main-content">
-          <!-- Left -->
-          <div class="main-left space-y-5">
-            <div class="project-main-card">
-              <div class="project-main-card-content">
-                <p class="text-sm text-gray-300">Featured Project</p>
-                <h2 class="text-4xl font-bold">SAMURAI QUEST</h2>
-                <div class="action-button mt-4">
-                  <span>Start Adventure</span>
-                  <span>➡️</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="download-card">
-              <h3 class="text-lg font-bold">Download Project Files</h3>
-              <div class="download-icons">
-                <div class="download-icon-item">
-                  📦<br><span class="text-sm">6.4G</span>
-                </div>
-                <div class="download-icon-item">
-                  📦<br><span class="text-sm">4.6G</span>
-                </div>
-                <div class="download-icon-item">
-                  📦<br><span class="text-sm">9.8G</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right -->
-          <div class="main-right space-y-5">
-            <div class="game-info-card">
-              <h3 class="text-lg font-bold">Upcoming Game</h3>
-              <p class="text-sm text-gray-300">Shadows Unleashed</p>
-              <p class="text-xs text-gray-400">September 10, 2024</p>
-            </div>
-
-            <a href="./trailer.html" class="trailer-card">
-              <div class="play-button">▶</div>
-              <span class="absolute bottom-4 left-4 text-white font-semibold z-10">Watch Trailer</span>
-            </a>
-          </div>
+    <!-- Right Section -->
+    <div class="flex flex-col justify-between gap-6">
+      <div class="glass rounded-xl-custom p-4">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm text-gray-200">Hi Coffee</span>
+          <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-full border border-white">
         </div>
-
+        <div class="bg-white/20 rounded-xl p-2 text-center text-black font-bold text-md mb-2">30% Off</div>
+        <button class="w-full bg-orange-300 hover:bg-orange-400 text-black font-semibold rounded-xl py-2 mb-2">Get Coupon</button>
+        <div class="flex justify-center mb-2">
+          <img src="coupon.png" alt="Coupon Icon" class="w-12">
+        </div>
+        <p class="text-xs text-gray-300">Upcoming Game</p>
+        <h4 class="text-white font-bold">Shadows Unleashed</h4>
+        <p class="text-xs text-gray-400">September 10, 2034</p>
+        <div class="flex justify-around mt-4">
+          <span>💬</span>
+          <span>📸</span>
+        </div>
+      </div>
+      <div class="relative trailer-card rounded-xl-custom h-40 overflow-hidden cursor-pointer" style="background-image: url('trailer.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center z-10">
+          <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-2xl">▶</div>
+          <span class="mt-2 text-white font-semibold">Play Trailer</span>
+        </div>
       </div>
     </div>
   </div>
