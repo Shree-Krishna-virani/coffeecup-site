@@ -127,18 +127,29 @@
   </style>
 </head>
 <body class="relative px-4 py-6">
+
   <div class="main-page-bg"></div>
   <div class="kompa-main-bg"></div>
   <div class="bg-overlay"></div>
 
+  <!-- Search Input -->
+  <div id="search-box" class="fixed top-6 left-1/2 transform -translate-x-1/2 w-80 bg-white/90 backdrop-blur text-black px-4 py-2 rounded-full shadow-lg hidden z-50">
+    <input
+      type="text"
+      placeholder="Search here..."
+      class="w-full bg-transparent border-none outline-none text-sm"
+      onkeydown="if(event.key === 'Enter'){ alert('Searching: ' + this.value); }"
+    />
+  </div>
+
   <div class="kompa-wrapper">
     <div class="max-w-full mx-auto grid grid-cols-[50px_1fr_260px] gap-2">
 
-      <!-- Sidebar ("hello" label moved visually inside this container) -->
+      <!-- Sidebar -->
       <div class="sidebar-container">
-        <div class="sidebar-button">🏠</div>
-        <div class="sidebar-button">🔍</div>
-        <div class="sidebar-button">👤</div>
+        <a href="index.html" class="sidebar-button" title="Home">🏠</a>
+        <button class="sidebar-button" title="Search" onclick="toggleSearch()">🔍</button>
+        <a href="about.html" class="sidebar-button" title="About Us">👤</a>
       </div>
 
       <!-- Project + Download -->
@@ -203,5 +214,12 @@
 
     </div>
   </div>
+
+  <script>
+    function toggleSearch() {
+      const box = document.getElementById('search-box');
+      box.classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
