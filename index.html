@@ -120,14 +120,14 @@
         <h2 class="text-white text-2xl font-bold">My Art Gallery</h2>
         <div class="project-gallery">
           <a href="overlays.html" class="art-card">
-            <img src="overlay.jpeg" alt="Sunset Warrior" class="art-media" />
+            <img src="overlay.jpeg" alt="Overlays" class="art-media" />
             <div class="art-card-content">
               <div class="art-title">Overlays</div>
               <div class="text-sm text-white/70">Digital Painting</div>
             </div>
           </a>
           <a href="non_animated_emotes.html" class="art-card">
-            <img src="non_animated_emots.jpg" alt="Forest Mage" class="art-media" />
+            <img src="non_animated_emots.jpg" alt="Emotes" class="art-media" />
             <div class="art-card-content">
               <div class="art-title">Emotes</div>
               <div class="text-sm text-white/70">Non-Animated</div>
@@ -151,7 +151,7 @@
             <video src="animation.mp4" autoplay muted loop playsinline class="art-media"></video>
             <div class="art-card-content">
               <div class="art-title">2D</div>
-              <div class="text-sm text-white/70">     Animation</div>
+              <div class="text-sm text-white/70">Animation</div>
             </div>
           </a>
         </div>
@@ -177,9 +177,15 @@
             <span>💬</span>
           </div>
         </div>
-        <div class="relative h-32 rounded-3xl overflow-hidden bg-cover bg-center cursor-pointer" style="background-image: url('main.mp4');">
-          <div class="absolute inset-0 bg-black/50"></div>
-          <div class="absolute inset-0 flex flex-col justify-center items-center text-white z-10">
+
+        <!-- Fixed Trailer Block -->
+        <div class="relative h-32 rounded-3xl overflow-hidden cursor-pointer">
+          <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
+            <source src="main.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="absolute inset-0 bg-black/50 z-10"></div>
+          <div class="absolute inset-0 flex flex-col justify-center items-center text-white z-20">
             <div class="w-10 h-10 rounded-full bg-white/30 flex justify-center items-center text-lg">▶</div>
             <span class="mt-1 text-sm font-semibold">Play Trailer</span>
           </div>
