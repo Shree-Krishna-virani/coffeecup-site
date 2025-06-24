@@ -22,6 +22,7 @@
       height: 100%;
       z-index: -3;
       opacity: 1;
+      display: block;
     }
     .kompa-main-bg {
       position: absolute;
@@ -129,6 +130,7 @@
   </style>
 </head>
 <body class="relative px-4 py-6">
+
   <!-- 🔁 Background looping video -->
   <video class="main-page-bg" autoplay muted loop playsinline>
     <source src="1.mp4" type="video/mp4" />
@@ -141,7 +143,7 @@
   <div class="kompa-wrapper">
     <div class="max-w-full mx-auto grid grid-cols-[50px_1fr_260px] gap-2">
 
-      <!-- Sidebar ("hello" label moved visually inside this container) -->
+      <!-- Sidebar with label -->
       <div class="sidebar-container">
         <div class="sidebar-button">🏠</div>
         <div class="sidebar-button">🔍</div>
