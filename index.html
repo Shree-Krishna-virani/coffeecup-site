@@ -56,6 +56,7 @@
       align-items: center;
       justify-content: center;
       transition: background 0.3s ease;
+      cursor: pointer;
     }
     .sidebar-button:hover {
       background-color: rgba(255, 255, 255, 0.2);
@@ -73,6 +74,10 @@
       border-radius: 26px;
       overflow: hidden;
       box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s;
+    }
+    .art-card:hover {
+      transform: scale(1.02);
     }
     .art-card::before {
       content: "";
@@ -103,33 +108,33 @@
 
       <!-- Sidebar -->
       <div class="sidebar-container">
-        <div class="sidebar-button">🏠</div>
-        <div class="sidebar-button">🔍</div>
-        <div class="sidebar-button">👤</div>
+        <a href="index.html" class="sidebar-button" title="Home">🏠</a>
+        <a href="#search" class="sidebar-button" title="Search">🔍</a>
+        <a href="about.html" class="sidebar-button" title="About">👤</a>
       </div>
 
       <!-- Art Product Gallery -->
       <div class="flex flex-col gap-4">
         <h2 class="text-white text-2xl font-bold">My Art Gallery</h2>
         <div class="project-gallery">
-          <div class="art-card" style="background-image: url('art1.jpg');">
+          <a href="sunset-warrior.html" class="art-card" style="background-image: url('art1.jpg');">
             <div class="art-card-content">
               <div class="art-title">Sunset Warrior</div>
               <div class="text-sm text-white/70">Digital Painting</div>
             </div>
-          </div>
-          <div class="art-card" style="background-image: url('art2.jpg');">
+          </a>
+          <a href="forest-mage.html" class="art-card" style="background-image: url('art2.jpg');">
             <div class="art-card-content">
               <div class="art-title">Forest Mage</div>
               <div class="text-sm text-white/70">Concept Art</div>
             </div>
-          </div>
-          <div class="art-card" style="background-image: url('art3.jpg');">
+          </a>
+          <a href="cyber-ronin.html" class="art-card" style="background-image: url('art3.jpg');">
             <div class="art-card-content">
               <div class="art-title">Cyber Ronin</div>
               <div class="text-sm text-white/70">Character Design</div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
