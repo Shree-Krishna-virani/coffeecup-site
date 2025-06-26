@@ -143,16 +143,22 @@
       font-weight: bold;
       border-radius: 16px;
       font-size: 0.875rem;
-      line-height: 1.25rem;
+      line-height: 1.4rem;
       text-align: center;
       box-shadow: 0 0 10px rgba(255,255,255,0.2);
       transition: all 0.3s ease;
+      width: 100%;
     }
     .promo-button:hover {
       transform: scale(1.03);
       background: #ffeaa7;
     }
     @media (max-width: 768px) {
+      .promo-button {
+        font-size: 0.75rem;
+        padding: 8px 10px;
+        line-height: 1.2rem;
+      }
       .kompa-wrapper {
         grid-template-columns: 1fr;
       }
