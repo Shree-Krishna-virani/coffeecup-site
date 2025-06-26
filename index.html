@@ -119,23 +119,48 @@
       transform: scale(1.02);
       transition: all 0.2s ease;
     }
+    .highlight-box {
+      background: linear-gradient(145deg, #ffeaa7, #fdcb6e);
+      padding: 8px 12px;
+      color: #222;
+      font-weight: 700;
+      font-size: 0.875rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .promo-button {
+      background: linear-gradient(to right, #ffec99, #f9ca24);
+      border: 2px solid #fff;
+      color: #000;
+      padding: 10px 12px;
+      font-weight: bold;
+      border-radius: 16px;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+    }
+    .promo-button:hover {
+      transform: scale(1.03);
+      background: #ffeaa7;
+    }
   </style>
 </head>
 <body class="relative px-4 py-6">
   <div class="main-page-bg"></div>
   <div class="kompa-main-bg"></div>
   <div class="bg-overlay"></div>
-
   <div class="kompa-wrapper">
     <div class="max-w-full mx-auto grid grid-cols-[50px_1fr_260px] gap-2">
-
       <!-- Sidebar -->
       <div class="sidebar-container">
         <a href="index.html" class="sidebar-button" title="Home">🏠</a>
         <a href="#search" class="sidebar-button" title="Search">🔍</a>
         <a href="about.html" class="sidebar-button" title="About">👤</a>
       </div>
-
       <!-- Art Product Gallery -->
       <div class="flex flex-col gap-4">
         <h2 class="text-white text-2xl font-bold">My Art Gallery</h2>
@@ -177,7 +202,6 @@
           </a>
         </div>
       </div>
-
       <!-- Right Panel -->
       <div class="flex flex-col gap-2">
         <div class="glass p-4 rounded-3xl">
@@ -185,13 +209,11 @@
             <span class="text-xs text-white">Hello, I Am CoffeeCup</span>
             <img src="logo.png" class="w-8 h-8 rounded-full border border-white" />
           </div>
-          <div class="bg-white/30 text-black text-sm font-bold rounded-xl p-1 text-center mb-2">30% OFF</div>
-          <button class="w-full bg-yellow-300 text-black font-semibold text-sm py-2 rounded-xl mb-2">
-            15% off when you are go with my full pro pack<br>
-            15% off when you are pre paid full payment
+          <div class="highlight-box">🎉 30% OFF</div>
+          <button class="promo-button">
+            💥 15% off for full pro pack<br>💳 Extra 15% off on prepaid orders
           </button>
         </div>
-
         <!-- Looping Trailer Video -->
         <div class="relative h-32 rounded-3xl overflow-hidden cursor-pointer">
           <video class="absolute inset-0 w-full h-full object-contain bg-black" autoplay muted loop playsinline preload="auto">
@@ -201,7 +223,6 @@
           <div class="absolute inset-0 bg-black/30 z-10"></div>
           <div class="absolute inset-0 flex flex-col justify-center items-center text-white z-20"></div>
         </div>
-
       </div>
     </div>
   </div>
