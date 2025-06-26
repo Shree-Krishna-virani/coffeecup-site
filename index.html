@@ -68,7 +68,7 @@
     }
     .art-card {
       position: relative;
-      height: 360px;
+      aspect-ratio: 16 / 9; /* Ensures consistent layout */
       border-radius: 26px;
       overflow: hidden;
       box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -95,7 +95,9 @@
     .art-media {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      object-position: center;
+      background-color: black;
       z-index: 1;
     }
   </style>
@@ -180,12 +182,10 @@
 
         <!-- Looping Trailer Video -->
         <div class="relative h-32 rounded-3xl overflow-hidden cursor-pointer">
-          <video src="main.mp4" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto">
-            
-          </video>
+          <video src="main.mp4" class="absolute inset-0 w-full h-full object-contain bg-black" autoplay muted loop playsinline preload="auto"></video>
           <div class="absolute inset-0 bg-black/30 z-10"></div>
           <div class="absolute inset-0 flex flex-col justify-center items-center text-white z-20">
-           
+            <!-- Optional overlay content -->
           </div>
         </div>
 
