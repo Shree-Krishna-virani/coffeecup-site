@@ -40,7 +40,7 @@
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 28px;
-      padding: 30px 6px 10px;
+      padding: 20px 6px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -65,8 +65,8 @@
     }
     .project-gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
     }
     .art-card {
       position: relative;
@@ -147,82 +147,91 @@
       transform: scale(1.03);
       background: #ffeaa7;
     }
+    @media (max-width: 768px) {
+      .kompa-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .project-gallery {
+        grid-template-columns: 1fr;
+      }
+      .glass {
+        margin-top: 1rem;
+      }
+    }
   </style>
 </head>
 <body class="relative px-4 py-6">
   <div class="main-page-bg"></div>
   <div class="kompa-main-bg"></div>
   <div class="bg-overlay"></div>
-  <div class="kompa-wrapper">
-    <div class="max-w-full mx-auto grid grid-cols-[50px_1fr_260px] gap-2">
-      <!-- Sidebar -->
-      <div class="sidebar-container">
-        <a href="index.html" class="sidebar-button" title="Home">🏠</a>
-        <a href="#search" class="sidebar-button" title="Search">🔍</a>
-        <a href="about.html" class="sidebar-button" title="About">👤</a>
-      </div>
-      <!-- Art Product Gallery -->
-      <div class="flex flex-col gap-4">
-        <h2 class="text-white text-2xl font-bold">My Art Gallery</h2>
-        <div class="project-gallery">
-          <a href="overlays.html" class="art-card">
-            <img src="overlay.jpeg" alt="Overlays" class="art-media" />
-            <div class="art-card-content">
-              <div class="art-title">Overlays</div>
-              <div class="text-sm text-white/70">Digital Painting</div>
-            </div>
-          </a>
-          <a href="non_animated_emotes.html" class="art-card">
-            <img src="non_animated_emots.jpg" alt="Emotes" class="art-media" />
-            <div class="art-card-content">
-              <div class="art-title">Emotes</div>
-              <div class="text-sm text-white/70">Non-Animated</div>
-            </div>
-          </a>
-          <a href="animated_emotes.html" class="art-card">
-            <video src="animate_emote.mp4" autoplay muted loop playsinline class="art-media"></video>
-            <div class="art-card-content">
-              <div class="art-title">Emotes</div>
-              <div class="text-sm text-white/70">Animated</div>
-            </div>
-          </a>
-          <a href="intro.html" class="art-card">
-            <video src="intro.mp4" autoplay muted loop playsinline class="art-media"></video>
-            <div class="art-card-content">
-              <div class="art-title">2D Intro</div>
-              <div class="text-sm text-white/70">Animated</div>
-            </div>
-          </a>
-          <a href="animation.html" class="art-card">
-            <video src="animation.mp4" autoplay muted loop playsinline class="art-media"></video>
-            <div class="art-card-content">
-              <div class="art-title">2D</div>
-              <div class="text-sm text-white/70">Animation</div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- Right Panel -->
-      <div class="flex flex-col gap-2">
-        <div class="glass p-4 rounded-3xl">
-          <div class="flex justify-between items-center mb-2">
-            <span class="text-xs text-white">Hello, I Am CoffeeCup</span>
-            <img src="logo.png" class="w-8 h-8 rounded-full border border-white" />
+  <div class="kompa-wrapper grid grid-cols-1 md:grid-cols-[50px_1fr_260px] gap-2 max-w-full mx-auto">
+    <!-- Sidebar -->
+    <div class="sidebar-container hidden md:flex">
+      <a href="index.html" class="sidebar-button" title="Home">🏠</a>
+      <a href="#search" class="sidebar-button" title="Search">🔍</a>
+      <a href="about.html" class="sidebar-button" title="About">👤</a>
+    </div>
+    <!-- Art Product Gallery -->
+    <div class="flex flex-col gap-4">
+      <h2 class="text-white text-2xl font-bold">My Art Gallery</h2>
+      <div class="project-gallery">
+        <a href="overlays.html" class="art-card">
+          <img src="overlay.jpeg" alt="Overlays" class="art-media" />
+          <div class="art-card-content">
+            <div class="art-title">Overlays</div>
+            <div class="text-sm text-white/70">Digital Painting</div>
           </div>
-          <div class="highlight-box">🎉 30% OFF</div>
-          <button class="promo-button">
-            💥 15% off for full pro pack<br>💳 Extra 15% off on prepaid orders
-          </button>
+        </a>
+        <a href="non_animated_emotes.html" class="art-card">
+          <img src="non_animated_emots.jpg" alt="Emotes" class="art-media" />
+          <div class="art-card-content">
+            <div class="art-title">Emotes</div>
+            <div class="text-sm text-white/70">Non-Animated</div>
+          </div>
+        </a>
+        <a href="animated_emotes.html" class="art-card">
+          <video src="animate_emote.mp4" autoplay muted loop playsinline class="art-media"></video>
+          <div class="art-card-content">
+            <div class="art-title">Emotes</div>
+            <div class="text-sm text-white/70">Animated</div>
+          </div>
+        </a>
+        <a href="intro.html" class="art-card">
+          <video src="intro.mp4" autoplay muted loop playsinline class="art-media"></video>
+          <div class="art-card-content">
+            <div class="art-title">2D Intro</div>
+            <div class="text-sm text-white/70">Animated</div>
+          </div>
+        </a>
+        <a href="animation.html" class="art-card">
+          <video src="animation.mp4" autoplay muted loop playsinline class="art-media"></video>
+          <div class="art-card-content">
+            <div class="art-title">2D</div>
+            <div class="text-sm text-white/70">Animation</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- Right Panel -->
+    <div class="flex flex-col gap-2">
+      <div class="glass p-4 rounded-3xl">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-xs text-white">Hello, I Am CoffeeCup</span>
+          <img src="logo.png" class="w-8 h-8 rounded-full border border-white" />
         </div>
-        <!-- Looping Trailer Video -->
-        <div class="relative h-32 rounded-3xl overflow-hidden cursor-pointer">
-          <video class="absolute inset-0 w-full h-full object-contain bg-black" autoplay muted loop playsinline preload="auto">
-            <source src="main.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div class="absolute inset-0 bg-black/30 z-10"></div>
-          <div class="absolute inset-0 flex flex-col justify-center items-center text-white z-20"></div>
-        </div>
+        <div class="highlight-box">🎉 300% OFF</div>
+        <button class="promo-button">
+          💥 15% off for full pro pack<br>💳 Extra 15% off on prepaid orders
+        </button>
+      </div>
+      <!-- Looping Trailer Video -->
+      <div class="relative h-32 rounded-3xl overflow-hidden cursor-pointer">
+        <video class="absolute inset-0 w-full h-full object-contain bg-black" autoplay muted loop playsinline preload="auto">
+          <source src="main.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-white z-20"></div>
       </div>
     </div>
   </div>
